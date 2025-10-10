@@ -1,1 +1,243 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global layout for Recollect AI web app */
+body {
+	@apply antialiased;
+}
+
+.app-header {
+	@apply bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white;
+	box-shadow: 0 3px 8px rgba(2,6,23,0.2);
+}
+
+.brand {
+	@apply text-2xl font-extrabold tracking-tight text-white;
+}
+
+/* Frosted header (fixed) */
+.frosted-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 50;
+	backdrop-filter: blur(8px) saturate(120%);
+	-webkit-backdrop-filter: blur(8px) saturate(120%);
+	background: rgba(6,78,69,0.45);
+	border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* push page content below the fixed header */
+main {
+	padding-top: 96px; /* matches header height + spacing */
+}
+
+/* header controls styling */
+.controls button {
+	color: #fff;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.12);
+	padding: 8px 14px;
+	border-radius: 10px;
+}
+.controls .btn-primary {
+	background: #2dd4bf; /* teal */
+	color: #033; 
+	border: none;
+	padding: 8px 16px;
+	border-radius: 12px;
+	font-weight: 600;
+}
+
+.btn-outline {
+	background: transparent;
+	color: #fff;
+	border: 1px solid rgba(255,255,255,0.18);
+	padding: 8px 14px;
+	border-radius: 10px;
+}
+
+.header-nav a { color: rgba(255,255,255,0.95); text-decoration: none; }
+.header-nav a:hover { text-decoration: underline; }
+
+/* ensure header nav centers on larger screens */
+@media (min-width: 768px) {
+	.frosted-header .max-w-7xl { display:flex; align-items:center; }
+}
+
+.controls button {
+	@apply px-3 py-1 rounded-md border bg-white/10 text-white;
+}
+
+.search-row input {
+	@apply w-full p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800;
+}
+
+.dashboard-grid {
+	@apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.item-card {
+	@apply p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm;
+}
+
+.tag {
+	@apply inline-block text-xs bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded-full mr-2;
+}
+
+.sentiment {
+	@apply text-sm font-medium;
+}
+
+/* Hero styles */
+.bg-hero-pattern {
+	background: linear-gradient(135deg, #0f5b57 0%, #2c8c86 40%, #cfeff0 100%);
+}
+
+.hero-title {
+	font-size: 4.5rem;
+	line-height: 1;
+	color: #ffffff;
+	font-weight: 800;
+}
+
+.btn-primary {
+	@apply bg-teal-400 text-white px-4 py-2 rounded-full font-semibold shadow-md;
+}
+
+.btn-ghost {
+	@apply bg-white/10 text-white px-4 py-2 rounded-full border border-white/20;
+}
+
+.btn-primary:hover { filter: brightness(0.95); }
+
+.hero-right .phone-mock {
+	/* iPhone 11-like mock (scaled) */
+	width: 340px;
+	height: 700px;
+	border-radius: 46px;
+	background: linear-gradient(180deg,#0b0f12 0%, #071015 100%);
+	box-shadow: 0 30px 60px rgba(2,6,23,0.45), inset 0 1px 0 rgba(255,255,255,0.02);
+		position: relative;
+		display:flex; align-items:center; justify-content:center;
+				transform: translate(90px, -36px);
+}
+
+/* notch */
+.hero-right .phone-mock::before{
+	content: '';
+	position: absolute;
+	top: 12px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 160px;
+	height: 34px;
+	background: rgba(0,0,0,0.6);
+	border-bottom-left-radius: 18px;
+	border-bottom-right-radius: 18px;
+}
+
+.hero-right .phone-mock::after{
+	/* small camera dot */
+	content: '';
+	position: absolute;
+	top: 22px;
+	right: 36px;
+	width: 10px; height: 10px; border-radius:50%;
+	background: rgba(255,255,255,0.6);
+}
+
+.phone-screen {
+	width: 86%; height: 86%; background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.2)); border-radius: 28px; overflow: hidden;
+	display:flex; flex-direction:column; color: #fff;
+}
+
+.phone-screen .text-sm { color: rgba(255,255,255,0.9); }
+
+/* Carousel styles */
+.carousel { height: 100%; }
+.carousel-frame { position: relative; width: 100%; }
+.carousel-slide { position: absolute; inset: 0; opacity: 0; transform: translateX(10px); transition: all 300ms ease; display:flex; flex-direction:column; justify-content:center; padding: 16px; }
+.carousel-slide.active { opacity: 1; transform: translateX(0); }
+.carousel-controls { padding: 6px 4px; }
+.dot { width: 8px; height: 8px; border-radius: 999px; background: rgba(255,255,255,0.3); margin: 0 4px; border: none; }
+.dot-active { background: #fff; }
+
+/* More accurate iPhone 11-like details */
+.phone-mock { border: 6px solid #e6e6e6; }
+.phone-mock .notch { position:absolute; top: 6px; left: 50%; transform: translateX(-50%); width: 210px; height: 34px; background: #000; border-bottom-left-radius: 18px; border-bottom-right-radius: 18px; display:flex; align-items:center; justify-content:center; gap:12px; }
+.phone-mock .speaker { width: 90px; height: 6px; background: #333; border-radius: 6px; }
+.phone-mock .front-camera { width: 10px; height: 10px; background: #111; border-radius: 50%; box-shadow: 0 0 0 3px rgba(255,255,255,0.02) inset; }
+.phone-mock .camera-pill { position:absolute; right: 18px; top: 16px; width: 8px; height: 8px; background: #111; border-radius: 50%; box-shadow: 0 0 12px rgba(0,0,0,0.35); }
+.side-button { position:absolute; width: 4px; height: 48px; background: #cfcfcf; border-radius: 4px; }
+.side-button-left { left: -8px; top: 160px; }
+.side-button-right { right: -8px; top: 160px; }
+
+.phone-mock { overflow: visible; }
+
+.service-card {
+	@apply p-4 bg-white rounded-xl shadow-sm text-gray-800 mb-4;
+}
+
+.cards-rail { display:flex; flex-direction:column; gap:12px; }
+
+/* Adjust ItemCard spacing for homepage */
+.item-card { @apply p-4 bg-white rounded-xl shadow; }
+
+/* Footer styles */
+.site-footer {
+	background: linear-gradient(180deg, rgba(2,66,61,0.85), rgba(23,83,79,0.85));
+	color: rgba(255,255,255,0.9);
+}
+.site-footer h4 { color: rgba(255,255,255,0.95); }
+.site-footer a { color: rgba(255,255,255,0.85); }
+
+.popup-header {
+	@apply flex items-center justify-between gap-3 mb-3;
+}
+
+.logo {
+	@apply text-xl font-semibold;
+}
+
+.search-row {
+	@apply mb-3;
+}
+
+.items-grid {
+	@apply grid grid-cols-1 gap-3;
+}
+
+.item-card {
+	@apply p-3 bg-gray-50 dark:bg-gray-800 rounded-md border border-gray-100 dark:border-gray-700;
+}
+
+.tag {
+	@apply inline-block text-xs bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded-full mr-2;
+}
+
+.sentiment {
+	@apply text-sm font-medium;
+}
+
+.btn-download {
+	background: rgba(255,255,255,0.06);
+	color: #fff;
+	border: 1px solid rgba(255,255,255,0.08);
+	padding: 8px 14px;
+	border-radius: 10px;
+}
+
+/* Hero circular CTA */
+.hero-cta-circle {
+	width: 160px; height: 80px; border-radius: 40px; display:flex; align-items:center; justify-content:center;
+	background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+	box-shadow: 0 8px 24px rgba(2,6,23,0.2);
+}
+
+.btn-download-large {
+	background: #2dd4bf; color: #033; padding: 12px 18px; border-radius: 28px; border:none; font-weight:700; display:flex; align-items:center;
+}
