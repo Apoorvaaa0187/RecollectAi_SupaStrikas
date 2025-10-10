@@ -13,7 +13,7 @@ export default async function addUser(event) {
         });
     const res = await response.json();
     if(res.status === "ok") {
-        window.location.href = '/';
+        window.location.href = '/dashboard';
     }
     else if(res.status === "not found") {
         alert("User not found");
