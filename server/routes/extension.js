@@ -7,7 +7,11 @@ const router = express.Router();
 
 router.post('/content', verifyJWT, async (req, res) => {
     const { title, url} = req.body;
-    console.log(req.user.username);
+    const existing = await Content.findOne({ url, user: req.user.username });
+    if (existing) {
+      console.log("URL already exists:", url);
+      return res.status(200).json({ message: "URL already saved — skipping." });
+    }
     const response = await generate(title,url);
     let cleanedString = response.slice(7, -3);
     const contentString = JSON.parse(cleanedString);
