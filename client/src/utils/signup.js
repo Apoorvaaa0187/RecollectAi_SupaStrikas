@@ -14,7 +14,7 @@ export default async function addUser(event) {
         });
     const res = await response.json();
     if(res.status === "ok") {
-        window.location.href = '/';
+        window.location.href = '/dashboard';
     }
     else {
         alert("Error occurred");

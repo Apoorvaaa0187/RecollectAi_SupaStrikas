@@ -30,6 +30,16 @@ export default function LandingHeader() {
             How It Works
           </Link>
 
+          <a
+            href=""
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-cyan-400 transition"
+          >
+            About
+          </a>
+
+
           {/* Neon Login Button */}
           <Link
             to="/login"
