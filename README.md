@@ -1,6 +1,6 @@
 # RecollectAi_SupaStrikas
 
-> A short tagline / one-line description of the project (e.g. “An AI-powered memory assistant for SupaStrikas fans”)
+“An AI-powered memory assistant for SupaStrikas fans”
 
 ## Table of Contents
 
