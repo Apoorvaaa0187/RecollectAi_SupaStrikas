@@ -1,0 +1,3 @@
+Speaker 1: Hello, welcome to the AI workshop.
+Speaker 2: Thank you! I am excited to learn about machine learning.
+Speaker 1: Today, we will cover basic AI concepts and hands-on coding exercises.

@@ -1,0 +1,82 @@
+{
+    "generated_at": "2025-10-10T22:07:51.799676",
+    "total_documents": 4,
+    "documents": [
+        {
+            "file_name": "sample_article.txt",
+            "summary": [
+                "Artificial intelligence transforming world helps healthcare education industry. Learning ai essential future technology is key to future of healthcare, experts say. Healthcare education industry can benefit from artificial intelligence technology, they say."
+            ],
+            "sentiment": [
+                {
+                    "label": "POSITIVE",
+                    "score": 0.9993404746055603
+                }
+            ],
+            "keywords": [
+                "artificial",
+                "intelligence",
+                "transforming",
+                "world",
+                "helps"
+            ]
+        },
+        {
+            "file_name": "textdata.txt",
+            "summary": [
+                " python used to work text files. welcome natural language processing one exciting research areas today see python used work text file. welcomeNatural Language Processing one excitingResearch areas today. See python used worked text files for example."
+            ],
+            "sentiment": [
+                {
+                    "label": "POSITIVE",
+                    "score": 0.9995753169059753
+                }
+            ],
+            "keywords": [
+                "welcome",
+                "natural",
+                "language",
+                "processing",
+                "one"
+            ]
+        },
+        {
+            "file_name": "sample_pdf.pdf",
+            "summary": [
+                " memory lane snapshot sample PDF file test document memorylanesnapshot project contains sample text check pdf reading processing pipeline topics included 1 artificial intelligence 2 machine learning 3 data analysis 4 python programming end sample pdf."
+            ],
+            "sentiment": [
+                {
+                    "label": "NEGATIVE",
+                    "score": 0.9670761227607727
+                }
+            ],
+            "keywords": [
+                "memory",
+                "lane",
+                "snapshot",
+                "sample",
+                "pdf"
+            ]
+        },
+        {
+            "file_name": "sample_transcript.txt",
+            "summary": [
+                " speaker 1 hello welcome ai workshop speaker 2 thank excited learn machine learning speaker 1 today cover basic ai concepts handson coding exercises. speaker 2: Thank you for attending the i workshop."
+            ],
+            "sentiment": [
+                {
+                    "label": "POSITIVE",
+                    "score": 0.9961452484130859
+                }
+            ],
+            "keywords": [
+                "speaker",
+                "1",
+                "hello",
+                "welcome",
+                "ai"
+            ]
+        }
+    ]
+}
