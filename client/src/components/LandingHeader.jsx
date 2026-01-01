@@ -31,7 +31,7 @@ export default function LandingHeader() {
           </Link>
 
           <a
-            href=""
+            href="https://drive.google.com/file/d/1Y4k_PISmSiimCSU8fV9OTv8OBZo2jUSa/view"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-cyan-400 transition"

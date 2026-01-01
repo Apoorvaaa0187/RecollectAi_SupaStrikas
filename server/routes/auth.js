@@ -19,8 +19,6 @@ router.post('/signup', async (req, res) => {
   };
   let existingUser = await users.findOne({ email: req.body.email });
   if (existingUser) return res.status(400).json({ message: 'User already exists' });
-  existingUser = await users.findOne({ username: req.body.username });
-  if (existingUser) return res.status(400).json({ message: 'User name already exists' });
 
   const hashedPassword = await bcrypt.hash(data.password, 10);
 
@@ -40,7 +38,7 @@ router.post('/signup', async (req, res) => {
     maxAge: 3600000,
   });
 
-  res.status(201).json({ message: 'Signup successful', user: { id: newUser.id, email: newUser.email, status: ok } });
+  res.status(201).json({ message: 'Signup successful', status: "ok", user: { id: newUser.id, email: newUser.email } });
 });
 
 

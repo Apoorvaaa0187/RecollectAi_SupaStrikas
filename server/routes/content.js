@@ -16,6 +16,7 @@ router.post("/search", verifyJWT, async (req, res) => {
         user: username,
         url: { $in: contentString.related_urls },
     })
+    console.log(searchResults)
     res.status(200).json({ result: searchResults });
   } catch (err) {
     console.error("Search route error:", err);

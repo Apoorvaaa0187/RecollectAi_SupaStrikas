@@ -31,7 +31,7 @@ export default function Login() {
           </button>
         </form>
         <p className="text-center text-gray-400 text-sm mt-4">
-          Don’t have an account?{" "}
+          Don't have an account?{" "}
           <Link
             to="/signup"
             className="text-cyan-400 hover:text-cyan-300 font-semibold transition"
