@@ -1,7 +1,8 @@
 import { GoogleGenAI } from "@google/genai";
 import Content from '../models/content.js'
 
-const API_KEY = "AIzaSyDCS_LxNpgFo7JVfcVSCRjOEXqlhnWIl8k";
+const API_KEY = process.env.Gemini_Key;
+console.log("API Key:", API_KEY); // Debugging line to check if the API key is loaded correctly
 const ai = new GoogleGenAI({apiKey: API_KEY});
 
 async function search(searchText,username) {
